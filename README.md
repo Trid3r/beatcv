@@ -1,4 +1,4 @@
-# BeatCV
+# CodeCV
 
 CV / Resume / Portafolio - with dynamic background built with **Fresh** and **Deno**
 
