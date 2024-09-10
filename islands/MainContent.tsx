@@ -1,6 +1,6 @@
 import { useState, useEffect } from "preact/hooks";
-import AudioVisualizer from "../components/AudioVisualizer.tsx";
 import CVModal from "../components/CVModal.tsx";
+import { AnimatedBackground } from "../components/AnimatedBackground.tsx";
 
 export default function MainContent() {
   const [isDarkMode, setDarkMode] = useState(true);
@@ -17,7 +17,6 @@ export default function MainContent() {
     const checkMobile = () => {
       setIsMobile(globalThis.innerWidth <= 768);
     };
-
     checkMobile();
     globalThis.addEventListener('resize', checkMobile);
 
@@ -26,12 +25,12 @@ export default function MainContent() {
 
   return (
     <div class={`flex flex-col min-h-screen ${isDarkMode ? 'bg-gray-900 text-white' : 'bg-slate-200 text-black'} transition-colors duration-300 flex items-center justify-center`}>
-      <AudioVisualizer isDarkMode={isDarkMode} isMobile={isMobile}/>
+      <AnimatedBackground isDarkMode={isDarkMode} />
       <main className="flex-grow flex items-center justify-center z-10 relative">
         {!showGame ? (
           <div class="text-center space-y-4">
-            <h1 class="font-sans text-4xl md:text-6xl lg:text-7xl 2xl:text-8xl  font-bold">Alexis Hernández Delgado</h1>
-            <p class="font-mono text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl">Software Developer</p>
+            {/* <h1 class="font-sans text-4xl md:text-6xl lg:text-7xl 2xl:text-8xl  font-bold">Alexis Hernández Delgado</h1> */}
+            {/* <p class="font-mono text-2xl md:text-3xl lg:text-4xl 2xl:text-5xl">Software Developer</p> */}
             <div class="flex justify-center space-x-4">
               <a class={`p-2 ${isDarkMode ? 'hover:text-gray-600' : 'hover:text-gray-500'} transition-colors duration-300`} onClick={toggleDarkMode}>
                 {isDarkMode ? (
@@ -52,8 +51,7 @@ export default function MainContent() {
             </div>
           </div>
         ) : (
-          <a>Juego</a>
-          // <Game /> // Aqui va el juego
+          <a>Juego a futuro</a>
         )}
       </main>
       <CVModal isOpen={showCV} onClose={closeCV} isDarkMode={isDarkMode} />

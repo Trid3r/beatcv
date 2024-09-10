@@ -1,27 +1,13 @@
-import { Head } from "$fresh/runtime.ts";
+import { useState } from "preact/hooks";
 
-export default function Error404() {
+export default function NotFoundPage() {
   return (
-    <>
-      <Head>
-        <title>404 - Page not found</title>
-      </Head>
-      <div class="px-4 py-8 mx-auto bg-[#86efac]">
-        <div class="max-w-screen-md mx-auto flex flex-col items-center justify-center">
-          <img
-            class="my-6"
-            src="/logo.svg"
-            width="128"
-            height="128"
-            alt="the Fresh logo: a sliced lemon dripping with juice"
-          />
-          <h1 class="text-4xl font-bold">404 - Page not found</h1>
-          <p class="my-4">
-            The page you were looking for doesn't exist.
-          </p>
-          <a href="/" class="underline">Go back home</a>
-        </div>
+    <div class={`flex flex-col min-h-screen bg-gray-900 text-white transition-colors duration-300 items-center justify-center`}>
+      <div class="text-center">
+        <h1 class="text-4xl font-bold">404</h1>
+        <p class="text-2xl">Oops! The page doesn't exist</p>
+        <a href="/" class="mt-6 block text-xl text-blue-500 underline">Go back to home</a>
       </div>
-    </>
+    </div>
   );
 }

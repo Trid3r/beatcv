@@ -10,7 +10,6 @@ export default function CVModal({ isOpen, onClose, isDarkMode }: CVModal) {
   const [pdfUrl, setPdfUrl] = useState("");
 
   useEffect(() => {
-    // Simula la carga del PDF. En una implementación real, esto podría ser una llamada a una API
     setPdfUrl("/CV.pdf");
   }, []);
 
