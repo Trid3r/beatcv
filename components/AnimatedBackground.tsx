@@ -88,7 +88,15 @@ export function AnimatedBackground({ isDarkMode }: { isDarkMode: boolean; }) {
       "Kconfig",
       "Makefile",
       "init/main.c",
-      "arch/x86/Makefile"
+      "arch/x86/Makefile",
+      "kernel/sched/core.c",
+      "kernel/debug/debug_core.h",
+      "kernel/gcov/base.c",
+      "kernel/rcu/sync.c",
+      "kernel/futex/requeue.c",
+      "kernel/printk/internal.h",
+      "certs/blacklist.c",
+      "samples/rust/rust_print.rs"
     ];
     const response = await fetch(
       `https://api.github.com/repos/torvalds/linux/contents/${files[Math.floor(Math.random() * files.length)]}`
@@ -103,7 +111,7 @@ export function AnimatedBackground({ isDarkMode }: { isDarkMode: boolean; }) {
 
   return (
     <div ref={containerRef} class={`fixed inset-0 overflow-y-auto pointer-events-none scrollbar-hide ${isDarkMode ? 'opacity-20' : 'opacity-50'}`}>
-      <pre ref={preRef} class="font-mono text-xs leading-5 whitespace-pre-wrap">
+      <pre ref={preRef} class="font-mono text-sm leading-5 whitespace-pre-wrap">
         {displayedCode.map((line, index) => (
           <div key={index}>
             <span class={`${isDarkMode ? 'text-white' : 'text-black'}`}>{line}</span>

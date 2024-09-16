@@ -51,7 +51,7 @@ export default function MainContent() {
             </div>
           </div>
         ) : (
-          <a>Next Step -_-</a>
+          <a>Next Step -_- (Sorry)</a>
         )}
       </main>
       <CVModal isOpen={showCV} onClose={closeCV} isDarkMode={isDarkMode} isMobile={isMobile} />
